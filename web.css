@@ -219,7 +219,6 @@ section.page:nth-of-type(even){
   font-size: 18px;
 }
 
-
 .progress{
   height: 10px;
   border-radius: 999px;
@@ -334,12 +333,92 @@ section.page:nth-of-type(even){
 }
 
 .contact-wrap{
-  max-width: 520px;  
+  max-width: 520px;
   width: 100%;
-  margin: 0 auto;   
-  text-align: left;  
+  margin: 0 auto;
+  text-align: left;
 }
 
 .contact-text{
   margin-bottom: 18px;
+}
+
+/* ================= Make the screen RESPONSIVE ================= */
+
+/* prevent overflow on small screens */
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* readable width on big screens */
+.home-box,
+.contact-wrap{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* navbar responsive */
+.nav-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  flex-wrap: wrap;
+}
+
+.nav-btn{
+  white-space: nowrap;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+}
+
+/* section responsive spacing */
+.page{
+  width: 100%;
+  padding: 70px 16px 40px;
+  scroll-margin-top: 90px;
+}
+
+/* Responsive profile image */
+.myImg{
+  width: clamp(110px, 18vw, 160px);
+  height: clamp(110px, 18vw, 160px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* contact inputs look better on phone */
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.15);
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(0,0,0,.35);
+}
+
+/* ah nis for Phone */
+@media (max-width: 576px){
+  .nav-btn{ padding: 8px 12px; font-size: .9rem; }
+  .section-title{ font-size: 1.6rem; }
+  .page{ padding-top: 65px; }
+}
+
+/* nis for Tablet */
+@media (min-width: 577px) and (max-width: 992px){
+  .page{ padding-top: 75px; }
+}
+
+/* nis for Large screens */
+@media (min-width: 1400px){
+  .home-box, .contact-wrap{ max-width: 1000px; }
+  .section-title{ font-size: 2.6rem; }
 }
